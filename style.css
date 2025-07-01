@@ -1,0 +1,34 @@
+body {
+  font-family: sans-serif;
+  background: #f0f0f0;
+  text-align: center;
+  margin-top: 80px;
+}
+.container {
+  background: #fff;
+  padding: 30px;
+  max-width: 400px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
+}
+input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+button {
+  padding: 10px 20px;
+  background: #00796b;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#qr-code {
+  margin-top: 20px;
+}
+a {
+  color: #00796b;
+  text-decoration: none;
+  font-weight: bold;
+}
