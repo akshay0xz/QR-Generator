@@ -1,7 +1,8 @@
 function generate() {
   const input = document.getElementById("url-input").value.trim();
   const linkOutput = document.getElementById("link-output");
-  const qrContainer = document.getElementById("qr-code");
+  const canvas = document.getElementById("qr-canvas");
+  const downloadBtn = document.getElementById("download-btn");
 
   if (input === "") {
     alert("Please enter a URL");
@@ -11,10 +12,17 @@ function generate() {
   // Show clickable link
   linkOutput.innerHTML = `🔗 <a href="${input}" target="_blank">${input}</a>`;
 
-  // Generate QR code
-  qrContainer.innerHTML = "";
-  QRCode.toCanvas(document.createElement('canvas'), input, function (error, canvas) {
+  // Generate QR on canvas
+  QRCode.toCanvas(canvas, input, function (error) {
     if (error) console.error(error);
-    else qrContainer.appendChild(canvas);
+    else downloadBtn.style.display = "inline-block";
   });
+}
+
+function downloadQR() {
+  const canvas = document.getElementById("qr-canvas");
+  const link = document.createElement("a");
+  link.download = "qr-code.png";
+  link.href = canvas.toDataURL("image/png");
+  link.click();
 }
