@@ -23,8 +23,9 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+  margin-top: 10px;
 }
-#qr-code {
+#qr-canvas {
   margin-top: 20px;
 }
 a {
